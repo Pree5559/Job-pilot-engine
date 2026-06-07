@@ -29,6 +29,7 @@ export default function JobsPage() {
   const router = useRouter();
   const { setJdText } = useTailoringStore();
   
+  const [isMounted, setIsMounted] = useState(false);
   const [jobs, setJobs] = useState<Job[]>([]);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
@@ -36,6 +37,10 @@ export default function JobsPage() {
   const [syncLocation, setSyncLocation] = useState("");
   const [isSyncing, setIsSyncing] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const fetchJobs = async () => {
     setIsLoading(true);
@@ -227,7 +232,7 @@ export default function JobsPage() {
                 )}
 
                 <div className="text-[10px] text-muted-foreground mt-2">
-                  Scraped at: {new Date(job.scraped_at).toLocaleString()}
+                  Scraped at: {isMounted ? new Date(job.scraped_at).toLocaleString() : ""}
                 </div>
               </div>
 
