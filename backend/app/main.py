@@ -31,7 +31,8 @@ app = FastAPI(
 )
 
 # CORS configuration to allow local and production Next.js client interaction
-origins = [org.strip() for org in settings.ALLOWED_ORIGINS.split(",") if org.strip()]
+origins = [org.strip().rstrip("/") for org in settings.ALLOWED_ORIGINS.split(",") if org.strip()]
+logger.info(f"CORS Allowed Origins initialized: {origins}")
 
 app.add_middleware(
     CORSMiddleware,
