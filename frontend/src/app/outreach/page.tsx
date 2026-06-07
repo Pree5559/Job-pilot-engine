@@ -277,8 +277,9 @@ export default function OutreachPage() {
               )}
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Select Job</label>
+                <label htmlFor="selectJob" className="text-xs font-semibold text-muted-foreground">Select Job</label>
                 <select
+                  id="selectJob"
                   value={jobId}
                   onChange={(e) => handleJobChange(e.target.value)}
                   className="rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring"
@@ -296,9 +297,10 @@ export default function OutreachPage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Master Resume</label>
+                <label htmlFor="masterResume" className="text-xs font-semibold text-muted-foreground">Master Resume</label>
                 <div className="flex gap-2">
                   <select
+                    id="masterResume"
                     value={selectedResumeId}
                     onChange={(e) => setSelectedResumeId(e.target.value)}
                     className="flex-1 rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring"
@@ -326,8 +328,9 @@ export default function OutreachPage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Recipient Email</label>
+                <label htmlFor="recipientEmail" className="text-xs font-semibold text-muted-foreground">Recipient Email</label>
                 <Input
+                  id="recipientEmail"
                   value={recipientEmail}
                   onChange={(e) => setRecipientEmail(e.target.value)}
                   placeholder="recruiter@company.com"
@@ -338,8 +341,9 @@ export default function OutreachPage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Recipient Name</label>
+                <label htmlFor="recipientName" className="text-xs font-semibold text-muted-foreground">Recipient Name</label>
                 <Input
+                  id="recipientName"
                   value={recipientName}
                   onChange={(e) => setRecipientName(e.target.value)}
                   placeholder="e.g. John Smith"
@@ -348,8 +352,9 @@ export default function OutreachPage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Template Type</label>
+                <label htmlFor="templateType" className="text-xs font-semibold text-muted-foreground">Template Type</label>
                 <select
+                  id="templateType"
                   value={template}
                   onChange={(e) => setTemplate(e.target.value)}
                   className="rounded-md border border-input bg-background px-3 py-2 text-sm shadow-xs focus-visible:outline-hidden"
@@ -403,8 +408,9 @@ export default function OutreachPage() {
 
                 <div className="space-y-4">
                   <div className="flex flex-col gap-1">
-                    <label className="text-xs font-bold text-muted-foreground">Subject Line</label>
+                    <label htmlFor="subjectLine" className="text-xs font-bold text-muted-foreground">Subject Line</label>
                     <Input
+                      id="subjectLine"
                       value={subjectEdit}
                       onChange={(e) => setSubjectEdit(e.target.value)}
                       className="font-semibold text-sm"
@@ -412,8 +418,9 @@ export default function OutreachPage() {
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <label className="text-xs font-bold text-muted-foreground">Email Body</label>
+                    <label htmlFor="emailBody" className="text-xs font-bold text-muted-foreground">Email Body</label>
                     <Textarea
+                      id="emailBody"
                       value={bodyEdit}
                       onChange={(e) => setBodyEdit(e.target.value)}
                       rows={12}
@@ -495,8 +502,9 @@ export default function OutreachPage() {
             </div>
             <form onSubmit={handleUploadResume} className="space-y-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Resume Name</label>
+                <label htmlFor="newResumeName" className="text-xs font-semibold text-muted-foreground">Resume Name</label>
                 <Input
+                  id="newResumeName"
                   value={newResumeName}
                   onChange={(e) => setNewResumeName(e.target.value)}
                   placeholder="e.g. My Master Resume 2026"
@@ -504,8 +512,9 @@ export default function OutreachPage() {
                 />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-muted-foreground">Resume Text Content</label>
+                <label htmlFor="newResumeText" className="text-xs font-semibold text-muted-foreground">Resume Text Content</label>
                 <Textarea
+                  id="newResumeText"
                   value={newResumeText}
                   onChange={(e) => setNewResumeText(e.target.value)}
                   placeholder="Paste the full text of your resume here..."

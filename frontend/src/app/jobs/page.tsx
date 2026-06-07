@@ -141,8 +141,9 @@ export default function JobsPage() {
         {/* Sync Card */}
         <form onSubmit={handleSync} className="flex flex-wrap items-center gap-2 rounded-lg border bg-card p-3 shadow-xs">
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-muted-foreground">Keywords</label>
+            <label htmlFor="syncKeywords" className="text-xs font-semibold text-muted-foreground">Keywords</label>
             <Input
+              id="syncKeywords"
               value={syncKeywords}
               onChange={(e) => setSyncKeywords(e.target.value)}
               placeholder="comma-separated"
@@ -150,8 +151,9 @@ export default function JobsPage() {
             />
           </div>
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-semibold text-muted-foreground">Location</label>
+            <label htmlFor="syncLocation" className="text-xs font-semibold text-muted-foreground">Location</label>
             <Input
+              id="syncLocation"
               value={syncLocation}
               onChange={(e) => setSyncLocation(e.target.value)}
               placeholder="e.g. Bangalore"
