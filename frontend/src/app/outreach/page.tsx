@@ -63,7 +63,7 @@ export default function OutreachPage() {
     // Fetch jobs
     const fetchJobs = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/jobs`);
+        const res = await fetch(`${API_BASE}/api/jobs/`);
         if (res.ok) {
           const data = await res.json();
           setAvailableJobs(data);
@@ -91,7 +91,7 @@ export default function OutreachPage() {
     // Fetch master resumes
     const fetchResumes = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/resumes`);
+        const res = await fetch(`${API_BASE}/api/resumes/`);
         if (res.ok) {
           const data = await res.json();
           setResumes(data);

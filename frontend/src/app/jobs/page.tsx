@@ -45,7 +45,7 @@ export default function JobsPage() {
   const fetchJobs = async () => {
     setIsLoading(true);
     try {
-      let url = `${API_BASE}/api/jobs`;
+      let url = `${API_BASE}/api/jobs/`;
       const params = [];
       if (statusFilter !== "all") params.push(`status=${statusFilter}`);
       if (search) params.push(`search=${search}`);
