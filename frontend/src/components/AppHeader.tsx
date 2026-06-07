@@ -11,12 +11,12 @@ export function AppHeader() {
           JobFlow AI
         </Link>
         <nav className="flex items-center gap-1">
-          <Link href="/jobs" prefetch={false}>
+          <Link href="/" prefetch={false}>
             <Button variant="ghost" size="sm" className="font-semibold">
               Jobs Board
             </Button>
           </Link>
-          <Link href="/" prefetch={false}>
+          <Link href="/studio" prefetch={false}>
             <Button variant="ghost" size="sm" className="font-semibold">
               Resume Studio
             </Button>
