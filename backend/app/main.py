@@ -30,11 +30,8 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS configuration to allow local Next.js client interaction
-origins = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+# CORS configuration to allow local and production Next.js client interaction
+origins = [org.strip() for org in settings.ALLOWED_ORIGINS.split(",") if org.strip()]
 
 app.add_middleware(
     CORSMiddleware,

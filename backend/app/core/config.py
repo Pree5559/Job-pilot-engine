@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     # --- Core ---
     ENVIRONMENT: str = Field(default="development", description="Runtime environment (development, staging, production)")
     DATABASE_URL: str = Field(default="sqlite:///./jobflow.db", description="SQLAlchemy database connection string")
+    ALLOWED_ORIGINS: str = Field(
+        default="http://localhost:3000,http://127.0.0.1:3000",
+        description="Comma-separated list of allowed CORS origins"
+    )
 
     # --- LLM Orchestrator ---
     GROQ_API_KEY: str = Field(default="", description="Groq Cloud API key for LLM inference")

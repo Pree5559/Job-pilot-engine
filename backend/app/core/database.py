@@ -6,6 +6,8 @@ from sqlalchemy.orm import sessionmaker
 from .config import settings
 
 DATABASE_URL = settings.DATABASE_URL
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 # SQLite specific check to enforce single thread execution constraints
 connect_args = {}
